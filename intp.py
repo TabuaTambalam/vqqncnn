@@ -12,30 +12,30 @@ def mkCBemb(seq):
   with net.create_extractor() as ex:
     ex.input("in0", ncnn.Mat(seq).clone())
     hrr, out0 = ex.extract("2")
-    del ex
-    return out0
+  del ex
+  return out0
 
 def emb2img(emb):
   with net.create_extractor() as ex:
     ex.input("2", emb)
     hrr, out0 = ex.extract("out0")
-    del ex
-    return Image.fromarray(np.array(out0).astype(np.uint8))
+  del ex
+  return Image.fromarray(np.array(out0).astype(np.uint8))
 
 def npmkCBemb(seq):
   with net.create_extractor() as ex:
     ex.input("in0", ncnn.Mat(seq).clone())
     hrr, out0 = ex.extract("2")
-    del ex
-    return np.array(out0)
+  del ex
+  return np.array(out0)
 
 
 def npemb2img(emb):
   with net.create_extractor() as ex:
     ex.input("2", ncnn.Mat(emb).clone())
     hrr, out0 = ex.extract("out0")
-    del ex
-    return Image.fromarray(np.array(out0).astype(np.uint8))
+  del ex
+  return Image.fromarray(np.array(out0).astype(np.uint8))
 
 def interpo(seq1,seq2,step=30,scale=1.2,outfmt='%02d.png'):
   stp=step-1
