@@ -3,8 +3,8 @@ from PIL import Image
 import ncnn
 net = ncnn.Net()
 net.opt.use_vulkan_compute = True
-net.load_param("vq.param")
-net.load_model("vq.bin")
+net.load_param("/tmp/vq.param")
+net.load_model("/tmp/vq.bin")
 
 dumped_seqs=np.fromfile('oz.bin',dtype=np.uint16).astype(np.int32).reshape((-1,256))
 
