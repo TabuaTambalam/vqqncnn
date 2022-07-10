@@ -1,1 +1,1 @@
-hardcoded mass, edit the script before run.
+hardcoded mass, edit the script (path .etc) before run.
