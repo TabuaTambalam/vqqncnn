@@ -29,3 +29,6 @@ def showp2(seq):
   uz=Image.fromarray(np.array(out0).astype(np.uint8))
   uz.save('/content/sample_data/000.png')
   return uz
+
+
+initvqdecjit()
