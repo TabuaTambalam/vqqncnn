@@ -26,7 +26,7 @@ def showp(n, prt=False):
     return uz
 
 def showp2(seq):
-  out0 = vqdec(torch.flatten(torch.from_numpy(seq).to(mindd.device)),vqd_shape)
+  out0 = vqdec(torch.flatten(torch.from_numpy(seq.astype(np.int32)).to(mindd.device)),vqd_shape)
   uz=Image.fromarray(out0.cpu().numpy().astype(np.uint8))
   uz.save('/content/sample_data/000.png')
   return uz
