@@ -2,7 +2,7 @@ import torch
 from PIL import Image
 import numpy as np
 
-def vqdecjit():
+def initvqdecjit():
   global vqdec
   global vqd_shape
   vqdec=torch.jit.load('/content/vqdec.pt')
